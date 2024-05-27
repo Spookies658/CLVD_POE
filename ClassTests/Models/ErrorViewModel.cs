@@ -1,4 +1,4 @@
-namespace ClassTests.Models
+namespace CLVD_POE.Models
 {
     public class ErrorViewModel
     {

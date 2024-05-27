@@ -1,5 +1,8 @@
-﻿@{
+﻿@model int
+@{
     ViewData["Title"] = "Home Page";
+    var userId = ViewData["userID"];
+    var products = ViewData["Products"] as List<CLVD_POE.Models.ProductTable>;
 }
 
 <style>
@@ -13,7 +16,7 @@
 <div class="text-center">
     <h1 class="text-dark">Welcome to KhumaloCraft Emporium</h1>   
     <img src="https://damassets.autodesk.net/content/dam/autodesk/www/images/right.jpg" alt="Home Page" width="1000" height="600" />
-  <div>
+  </div>
 
 <div style="height: 100px;"></div>
         
@@ -27,3 +30,45 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEtxk5t6035oBe5C2Z6sBtraM7jVEgdTSgnw&usqp=CAU" alt="Woodwork" width="500" height="300" />
         </div>
     </div>
+</div>
+
+<div style="height = 100"/>
+
+@if (userId != null)
+{
+    <p>User ID: @userId</p>
+}
+
+<h2>Orders</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+       @foreach (var Products in products)
+       {
+          <tr>
+                <td>@Products.Name</td>
+                <td>@Products.Price</td>
+                <td>@Products.Category</td>
+                <td>@Products.Availability</td>
+                <td>
+                    <form asp-controller="Transaction" asp-action="PlaceOrder" method="post">
+                        <input type="hidden" name="userID" value="@userId" />
+                        <input type="hidden" name="productID" value="@Products.ProductID" />
+                        <button type="submit">Place Order</button>
+                    </form>
+                </td>
+          </tr>
+       }
+        
+    </tbody>
+</table>

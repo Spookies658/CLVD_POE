@@ -1,4 +1,5 @@
-﻿
+﻿﻿@using Microsoft.EntityFrameworkCore.Storage
+@model CLVD_POE.Models.ProductTable
 @{ ViewData["Title"] = "My Work"; 
 }
 
@@ -9,6 +10,7 @@
         background-size: cover;
     }
 </style>
+
 
 <div style="height: 50px"></div>
 
@@ -28,7 +30,6 @@
                  <p>Chairs</p>
                  <p>Desks</p>
                  <p>Bookshelves</p>
-                 <p>Bed side tables</p>
              </div>
               <div class="col-md-6">
                 <img src="https://i.pinimg.com/474x/5f/c7/6d/5fc76df6bda7762fe219ed48a724e69d.jpg" alt="Indoor furnature" height="300" width="500" />
@@ -47,7 +48,6 @@
                            <p>Tables</p>
                            <p>Chairs</p>
                            <p>Benches</p>
-                           <p>Swings</p>
                            <p>Planters</p>
                          </div>
                            <div class="col-md-6">
@@ -61,8 +61,8 @@
                 <div class="text-center">
                     <h3 class="text-black">Our Materials</h3>
                     <p>Our products are made with a variety of the best quality materials. There are many options to choose from:</p>
-                    <p>Indoor Materials: Oak, Maple, Cherry, Walnut, Pine, Ash.</p>
-                    <p>Outdoor Materials: Teak, Cedar, Redwood, Pine, Bamboo, Mahogany.</p>
+                    <p>Indoor Materials: Oak, Walnut, Pine.</p>
+                    <p>Outdoor Materials: Teak, Cedar, Bamboo.</p>
                     <p>If there are any other types of materials you wish your fine piece of furnature to be made from, please do let us know.</p>
                 </div>
 
@@ -104,3 +104,55 @@
                          
                          </div>
                      </div>
+
+<div style="height: 120px"></div>
+
+<div class="text-center">
+    <h3 class="text-black">Place an Order</h3>"
+</div>
+
+<div class="text-center">
+    <form action="MyWork" method="post">
+        <label for="Name">Select a product</label>
+        <select name="Name" id="Name">
+            <option value="Table">Table</option>
+            <option value="Chair">Chair</option>
+            <option value="Desk">Desk</option>
+            <option value="Bookshelf">Bookshelf</option>
+            <option value="Bench">Bench</option>
+            <option value="Planter">Planter</option>
+        </select>
+        <label for="Category">Select a material</label>
+        <select name="Category" id="Category">
+            <option value="Oak">Oak</option>
+            <option value="Walnut">Walnut</option>
+            <option value="Pine">Pine</option>
+            <option value="Teak">Teak</option>
+            <option value="Cedar">Cedar</option>
+            <option value="Bamboo">Bamboo</option>
+        </select>
+        <label for="Price">Price</label>
+        <select name="Price" id="Price">
+            <option value="200">200</option>
+            <option value="250">250</option>
+            <option value="300">300</option>
+            <option value="350">350</option>
+            <option value="400">400</option>
+            <option value="450">450</option>
+            <option value="500">500</option>
+            <option value="600">600</option>
+            <option value="700">700</option>
+        </select>
+        <label for="Availability">Availability</label>
+        <select name="Availability" id="Availability">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="0">0</option>
+        </select>
+            <button type="submit">Submit</button>
+    </form>
+</div>
+
+

@@ -1,0 +1,31 @@
+﻿@model CLVD_POE.Models.userTable
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<style>
+    body {
+        background-image: url("https://wallpapers.com/images/hd/light-wood-background-rqh4w7rfft0bksz3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Login</h1>
+    <p>If you don't have an account <a href="https://localhost:7004/User/About">Sign Up</a> for a new account.</p>
+</div>
+
+<div style="height: 100px;"></div>
+
+<div class="text-center">
+<body>
+    <form asp-controller="Login" asp-action="Privacy" method="post">
+        <p>Please enter your first name and email:</p>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="surname" placeholder="Surname" reqired>
+        <input type="text" name="email" placeholder="example@gmail.com" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</div>

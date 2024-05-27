@@ -1,6 +1,6 @@
-﻿
+﻿@model CLVD_POE.Models.userTable
 @{
-    ViewData["Title"] = "About Us";
+    ViewData["Title"] = "Sign Up";
 }
 
 <style>
@@ -10,6 +10,26 @@
         background-size: cover;
     }
 </style>
+
+<div class="text-center">
+    <h1 class="text-black">Sign Up</h1>
+</div>
+
+<div style="height: 100px;"></div>
+
+<div class="text-center">
+<body>
+    <form action="About" method="post">
+        <p>Sign Up</p>
+        <input type="text" name="Name" placeholder="Name" required>
+        <input type="text" name="Surname" placeholder="Surname" required>
+        <input type="text" name="Email" placeholder="example@gmail.com" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</div>
+
+<div style="height: 100px;"></div>
 
 <div class="text-center">
     <h1 class="text-black">About Us</h1>
@@ -30,6 +50,7 @@
     </div>
 
     <div style="height: 200px;"></div>
+
 
 
                     
